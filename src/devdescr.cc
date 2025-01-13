@@ -6375,7 +6375,7 @@ jtag_device_def_type deviceDefinitions[] = {
 	// DEV_ATXMEGA64B3
 	{
 		"atxmega64b3",
-		0x9651,
+		0x961e,
 		256, 272,	   // 69,632 bytes flash (page size. # pages)
 		32, 64, // 2048 bytes EEPROM
 		54 * 4,		// 54 interrupt vectors
