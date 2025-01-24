@@ -18,28 +18,28 @@ backup=()
 options=()
 install=
 changelog=
-source=(https://github.com/Florin-Popescu/avarice/archive/refs/tags/v${pkgver}-${pkgrel}.tar.gz)
+source=(git+https://github.com/avrf0/avarice.git)
 noextract=()
 md5sums=('SKIP')
 validpgpkeys=()
 
 prepare() {
-	cd "${srcdir}/${pkgname}-${pkgver}-${pkgrel}"
+	cd "${srcdir}/${pkgname}"
 }
 
 build() {
-	cd "${srcdir}/${pkgname}-${pkgver}-${pkgrel}"
+	cd "${srcdir}/${pkgname}"
 	./Bootstrap
 	./configure
 	make all
 }
 
 check() {
-	cd "${srcdir}/${pkgname}-${pkgver}-${pkgrel}"
+	cd "${srcdir}/${pkgname}"
 	make -k check
 }
 
 package() {
-	cd "${srcdir}/${pkgname}-${pkgver}-${pkgrel}"
+	cd "${srcdir}/${pkgname}"
 	make DESTDIR="$pkgdir/" install
 }

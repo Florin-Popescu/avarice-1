@@ -1,3 +1,9 @@
+2024-12-08 Jan Horák <jan.edhorak@seznam.cz>
+	* src/devdescr.cc: added device descriptors for other MCUs from ATmega 0-series, ATtiny 0, 1, 2 - series
+	* src/ioreg.cc: added registers
+	* src/ioreg.h: added headers
+	* scripts/io_gen.py: modified to take the part name as input and put it in the name of the variable
+
 2021-08-23 Joerg Wunsch <j.gnu@uriah.heep.sax.de>
 
 	Submitted by Joris Putcuyps:

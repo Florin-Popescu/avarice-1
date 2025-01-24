@@ -73,11 +73,7 @@ extern gdb_io_reg_def_type attiny25_io_registers[];
 extern gdb_io_reg_def_type attiny45_io_registers[];
 extern gdb_io_reg_def_type attiny85_io_registers[];
 extern gdb_io_reg_def_type attiny261_io_registers[];
-extern gdb_io_reg_def_type attiny402_io_registers[];
-extern gdb_io_reg_def_type attiny412_io_registers[];
 extern gdb_io_reg_def_type attiny461_io_registers[];
-extern gdb_io_reg_def_type attiny814_io_registers[];
-extern gdb_io_reg_def_type attiny3217_io_registers[];
 extern gdb_io_reg_def_type attiny861_io_registers[];
 extern gdb_io_reg_def_type atmega32c1_io_registers[];
 extern gdb_io_reg_def_type atmega32m1_io_registers[];
@@ -115,5 +111,51 @@ extern gdb_io_reg_def_type attiny88_io_registers[];
 extern gdb_io_reg_def_type atmega128rfa1_io_registers[];
 extern gdb_io_reg_def_type atmega256rfr2_io_registers[];
 extern gdb_io_reg_def_type atxmega16a4u_io_registers[];
+
+extern gdb_io_reg_def_type atmega808_io_registers[];
+extern gdb_io_reg_def_type atmega809_io_registers[];
+extern gdb_io_reg_def_type atmega1608_io_registers[];
+extern gdb_io_reg_def_type atmega1609_io_registers[];
+extern gdb_io_reg_def_type atmega3209_io_registers[];
+
+extern gdb_io_reg_def_type attiny202_io_registers[];
+extern gdb_io_reg_def_type attiny204_io_registers[];
+extern gdb_io_reg_def_type attiny402_io_registers[];
+extern gdb_io_reg_def_type attiny404_io_registers[];
+extern gdb_io_reg_def_type attiny406_io_registers[];
+extern gdb_io_reg_def_type attiny804_io_registers[];
+extern gdb_io_reg_def_type attiny806_io_registers[];
+extern gdb_io_reg_def_type attiny807_io_registers[];
+extern gdb_io_reg_def_type attiny1604_io_registers[];
+extern gdb_io_reg_def_type attiny1606_io_registers[];
+extern gdb_io_reg_def_type attiny1607_io_registers[];
+
+extern gdb_io_reg_def_type attiny212_io_registers[];
+extern gdb_io_reg_def_type attiny214_io_registers[];
+extern gdb_io_reg_def_type attiny412_io_registers[];
+extern gdb_io_reg_def_type attiny414_io_registers[];
+extern gdb_io_reg_def_type attiny416_io_registers[];
+extern gdb_io_reg_def_type attiny417_io_registers[];
+extern gdb_io_reg_def_type attiny814_io_registers[];
+extern gdb_io_reg_def_type attiny816_io_registers[];
+extern gdb_io_reg_def_type attiny817_io_registers[];
+extern gdb_io_reg_def_type attiny1614_io_registers[];
+extern gdb_io_reg_def_type attiny1616_io_registers[];
+extern gdb_io_reg_def_type attiny1617_io_registers[];
+extern gdb_io_reg_def_type attiny3216_io_registers[];
+extern gdb_io_reg_def_type attiny3217_io_registers[];
+
+extern gdb_io_reg_def_type attiny424_io_registers[];
+extern gdb_io_reg_def_type attiny426_io_registers[];
+extern gdb_io_reg_def_type attiny427_io_registers[];
+extern gdb_io_reg_def_type attiny824_io_registers[];
+extern gdb_io_reg_def_type attiny826_io_registers[];
+extern gdb_io_reg_def_type attiny827_io_registers[];
+extern gdb_io_reg_def_type attiny1624_io_registers[];
+extern gdb_io_reg_def_type attiny1626_io_registers[];
+extern gdb_io_reg_def_type attiny1627_io_registers[];
+extern gdb_io_reg_def_type attiny3224_io_registers[];
+extern gdb_io_reg_def_type attiny3226_io_registers[];
+extern gdb_io_reg_def_type attiny3227_io_registers[];
 
 #endif /* INCLUDE_IOREG_H */

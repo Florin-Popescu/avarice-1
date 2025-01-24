@@ -3075,66 +3075,8 @@ jtag_device_def_type deviceDefinitions[] = {
 	},
 	{ 0 },			// Xmega device descr.
 	},
-	// DEV_ATTINY402
-	{
-		"attiny402",
-		0x9227,
-		64, 64,	// flash
-		32, 4,	// EEPROM
-		(31 + 1) * 2,	// First flash address which is not an interrupt vector
-		DEVFL_NONE,
-		attiny402_io_registers,
-		false,
-		0x5E7, 0, // fuses
-		0, // osccal
-		0, // OCD revision
-		{
-			0	// no mkI support
-		},
-		{
-			0   // no mkII JTAG support
-		},
-		{
-			0   // no Xmega support
-		},
-		{
-			fill_b2(0x8000),	// Start address of Program memory
-			64,					// Page size of flash in bytes
-			32,					// Page size of EEPROM
-			fill_b2(0x1000),	// Address of NVMCTRL module
-			fill_b2(0x0F80),	// Address of OCD module
-		},
-	},
-	// DEV_ATTINY412
-	{
-		"attiny412",
-		0x9223,
-		64, 64,	// flash
-		32, 4,	// EEPROM
-		(26 + 1) * 2,	// First flash address which is not an interrupt vector
-		DEVFL_NONE,
-		attiny412_io_registers,
-		false,
-		0x5F7, 0, // fuses
-		0, // osccal
-		0, // OCD revision
-		{
-			0	// no mkI support
-		},
-		{
-			0   // no mkII JTAG support
-		},
-		{
-			0   // no Xmega support
-		},
-		{
-			fill_b2(0x8000),	// Start address of Program memory
-			64,					// Page size of flash in bytes
-			32,					// Page size of EEPROM
-			fill_b2(0x1000),	// Address of NVMCTRL module
-			fill_b2(0x0F80),	// Address of OCD module
-		},
-	},
+
+
 	// DEV_ATTINY461
 	{
 	"attiny461",
@@ -3198,70 +3140,6 @@ jtag_device_def_type deviceDefinitions[] = {
 		fill_b2(0x1C),	// EECRAddress
 	},
 	{ 0 },			// Xmega device descr.
-	},
-	// DEV_ATTINY814
-	{
-		"attiny814",
-		0x9322,
-		64, 128,	// flash
-		32, 4,	// EEPROM
-		26 * 2,	// interrupt vectors
-		DEVFL_NONE,
-		attiny814_io_registers,
-		false,
-		0x5F7, 0, // fuses
-		0, // osccal
-		0, // OCD revision
-		{
-			0	// no mkI support
-		},
-		{
-			0   // no mkII JTAG support
-		},
-		{
-			0   // no Xmega support
-		},
-		{
-			fill_b2(0x8000),	// Start address of Program memory
-			64,					// Page size of flash in bytes
-			32,					// Page size of EEPROM
-			fill_b2(0x1000),	// Address of NVMCTRL module
-			fill_b2(0x0F80),	// Address of OCD module
-		},
-	},
-	// DEV_ATTINY3217
-	{
-		"attiny3217",
-		0x9522,
-		128, 256,	// flash
-		64, 4,	// EEPROM
-		31 * 4,	// interrupt vectors
-		DEVFL_NONE,
-		attiny3217_io_registers,
-		false,
-		0x5F7, 0, // fuses
-		0, // osccal
-		0, // OCD revision
-		{
-			0	// no mkI support
-		},
-		{
-			0   // no mkII JTAG support
-		},
-		{
-			0   // no Xmega support
-		},
-		{
-			fill_b2(0x8000),	// Start address of Program memory
-			128,					// Page size of flash in bytes
-			64,					// Page size of EEPROM
-			fill_b2(0x1000),	// Address of NVMCTRL module
-			fill_b2(0x0F80),	// Address of OCD module
-			{ 0x94, 0x11, 0x8c, 0x0a, 0x98, 0x08, 0xdc, 0x05, 0xee, 0x02, 0x00, 0x80, 0x00, 0x00, 0x00,
-0x01, 0x40, 0x00, 0x0a, 0x05, 0xff, 0x00, 0xff, 0x00, 0x00, 0x14, 0x00, 0x13, 0x00, 0x11, 0x80,
-0x12, 0x8a, 0x12, 0x22, 0x95, 0x00, 0x00, 0x00 },
-
-		},
 	},
 	// DEV_ATTINY861
 	{
@@ -6497,7 +6375,7 @@ jtag_device_def_type deviceDefinitions[] = {
 	// DEV_ATXMEGA64B3
 	{
 		"atxmega64b3",
-		0x9651,
+		0x961e,
 		256, 272,	   // 69,632 bytes flash (page size. # pages)
 		32, 64, // 2048 bytes EEPROM
 		54 * 4,		// 54 interrupt vectors
@@ -6575,96 +6453,6 @@ jtag_device_def_type deviceDefinitions[] = {
 			32,				 // EEPROM page size
 			fill_b2(0x1c0),	 // IO space base address of NVM controller
 			fill_b2(0x90),	  // IO space address of MCU control
-		},
-	},
-	// DEV_ATMEGA3208
-	{
-		"atmega3208",
-		0x9552,
-		128, 256,	   // 32768 bytes flash (page size. # pages)
-		64, 4, // 256 bytes EEPROM
-		0x50,		// First flash address which is not an interrupt vector
-		DEVFL_NONE,
-		atmega3208_io_registers,
-		false,
-		0x5E7, 0, // fuses
-		0, // osccal
-		0, // OCD revision
-		{
-			0   // no mkI support
-		},
-		{
-			0   // no mkII JTAG support
-		},
-		{
-			0   // no Xmega support
-		},
-		{
-			fill_b2(0x4000),	// Start address of Program memory
-			128,				// Page size of flash in bytes
-			64,					// Page size of EEPROM
-			fill_b2(0x1000),	// Address of NVMCTRL module
-			fill_b2(0x0F80),	// Address of OCD module
-		},
-	},
-	// DEV_ATMEGA4808
-	{
-		"atmega4808",
-		0x9650,
-		128, 384,	   // 49152 bytes flash (page size. # pages)
-		64, 4, // 256 bytes EEPROM
-		0x50,		// First flash address which is not an interrupt vector
-		DEVFL_NONE,
-		atmega4808_io_registers,
-		false,
-		0x5E7, 0, // fuses
-		0, // osccal
-		0, // OCD revision
-		{
-			0   // no mkI support
-		},
-		{
-			0   // no mkII JTAG support
-		},
-		{
-			0   // no Xmega support
-		},
-		{
-			fill_b2(0x4000),	// Start address of Program memory
-			128,				// Page size of flash in bytes
-			64,					// Page size of EEPROM
-			fill_b2(0x1000),	// Address of NVMCTRL module
-			fill_b2(0x0F80),	// Address of OCD module
-		},
-	},
-	// DEV_ATMEGA4809
-	{
-		"atmega4809",
-		0x9651,
-		128, 384,	   // 49152 bytes flash (page size. # pages)
-		64, 4, // 256 bytes EEPROM
-		0x50,		// First flash address which is not an interrupt vector
-		DEVFL_NONE,
-		atmega4809_io_registers,
-		false,
-		0x5E7, 0, // fuses
-		0, // osccal
-		0, // OCD revision
-		{
-			0   // no mkI support
-		},
-		{
-			0   // no mkII JTAG support
-		},
-		{
-			0   // no Xmega support
-		},
-		{
-			fill_b2(0x4000),	// Start address of Program memory
-			128,				// Page size of flash in bytes
-			64,					// Page size of EEPROM
-			fill_b2(0x1000),	// Address of NVMCTRL module
-			fill_b2(0x0F80),	// Address of OCD module
 		},
 	},
 	// DEV_ATXMEGA64A3
@@ -6916,6 +6704,1433 @@ jtag_device_def_type deviceDefinitions[] = {
 		fill_b2(0x90),	// IO space address of MCU control
 	},
 	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// DEV_ATMEGA808
+    {
+	"atmega808",
+	0x9326,
+	64, 128,	   // 8192 bytes flash (page size. # pages)
+	32, 8, // 256 bytes EEPROM
+	0x50,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	atmega808_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		64,				// Page size of flash in bytes
+		32,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+    },
+    // DEV_ATMEGA809
+    {
+	"atmega809",
+	0x932a,
+	64, 128,	   // 8192 bytes flash (page size. # pages)
+	32, 8, // 256 bytes EEPROM
+	0x50,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	atmega809_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		64,				// Page size of flash in bytes
+		32,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+    },
+    // DEV_ATMEGA1608
+    {
+	"atmega1608",
+	0x9427,
+	64, 256,	   // 16384 bytes flash (page size. # pages)
+	32, 8, // 256 bytes EEPROM
+	0x50,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	atmega1608_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		64,				// Page size of flash in bytes
+		32,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+    },
+    // DEV_ATMEGA1609
+    {
+	"atmega1609",
+	0x9426,
+	64, 256,	   // 16384 bytes flash (page size. # pages)
+	32, 8, // 256 bytes EEPROM
+	0x50,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	atmega1609_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		64,				// Page size of flash in bytes
+		32,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+    },
+    // DEV_ATMEGA3208
+    {
+	"atmega3208",
+	0x9530,
+	128, 256,	   // 32768 bytes flash (page size. # pages)
+	64, 4, // 256 bytes EEPROM
+	0x50,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	atmega3208_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		128,				// Page size of flash in bytes
+		64,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+	},
+    // DEV_ATMEGA3209
+    {
+	"atmega3209",
+	0x9531,
+	128, 256,	   // 32768 bytes flash (page size. # pages)
+	64, 4, // 256 bytes EEPROM
+	0x50,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	atmega3209_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		128,				// Page size of flash in bytes
+		64,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+	},
+
+    // DEV_ATMEGA4808
+    {
+	"atmega4808",
+	0x9650,
+	128, 384,	   // 49152 bytes flash (page size. # pages)
+	64, 4, // 256 bytes EEPROM
+	0x50,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	atmega4808_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		128,				// Page size of flash in bytes
+		64,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+    },
+    // DEV_ATMEGA4809
+    {
+	"atmega4809",
+	0x9651,
+	128, 384,	   // 49152 bytes flash (page size. # pages)
+	64, 4, // 256 bytes EEPROM
+	0x50,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	atmega4809_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		128,				// Page size of flash in bytes
+		64,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+    },
+
+
+    // DEV_ATTINY202
+    {
+	"attiny202",
+	0x9123,
+	64, 32,	   // 2048 bytes flash (page size. # pages)
+	32, 2, // 64 bytes EEPROM
+	(31 + 1) * 2,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	attiny202_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		64,				// Page size of flash in bytes
+		32,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+    },
+
+    // DEV_ATTINY204
+    {
+	"attiny204",
+	0x9122,
+	64, 32,	   // 2048 bytes flash (page size. # pages)
+	32, 2, // 64 bytes EEPROM
+	(31 + 1) * 2,		// First flash address which is not an interrupt vector
+	DEVFL_NONE,
+	attiny204_io_registers,
+	false,
+	0x5E7, 0, // fuses
+	0, // osccal
+	0, // OCD revision
+	{
+		0   // no mkI support
+	},
+	{
+		0   // no mkII JTAG support
+	},
+	{
+		0   // no Xmega support
+	},
+	{
+		fill_b2(0x4000),	// Start address of Program memory
+		64,				// Page size of flash in bytes
+		32,					// Page size of EEPROM
+		fill_b2(0x1000),	// Address of NVMCTRL module
+		fill_b2(0x0F80),	// Address of OCD module
+	},
+    },
+
+	// DEV_ATTINY402
+	{
+		"attiny402",
+		0x9227,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		(31 + 1) * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny402_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal0x7A
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+	// DEV_ATTINY404
+	{
+		"attiny404",
+		0x9226,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		(31 + 1) * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny404_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+	// DEV_ATTINY406
+	{
+		"attiny406",
+		0x9225,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		(31 + 1) * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny406_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY804
+	{
+		"attiny804",
+		0x9325,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		(31 + 1) * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny804_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY806
+	{
+		"attiny806",
+		0x9324,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		(31 + 1) * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny806_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY807
+	{
+		"attiny807",
+		0x9323,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		(31 + 1) * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny807_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY1604
+	{
+		"attiny1604",
+		0x9425,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		(31 + 1) * 4,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny1604_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+	// DEV_ATTINY1606
+	{
+		"attiny1606",
+		0x9424,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		(31 + 1) * 4,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny1606_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY1607
+	{
+		"attiny1607",
+		0x9423,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		(31 + 1) * 4,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny1607_io_registers,
+		false,
+		0x5E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY212
+	{
+		"attiny212",
+		0x9121,
+		64, 32,	// flash
+		32, 2,	// EEPROM
+		26 * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny212_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY214
+	{
+		"attiny214",
+		0x9120,
+		64, 32,	// flash
+		32, 2,	// EEPROM
+		26 * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny214_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY412
+	{
+		"attiny412",
+		0x9223,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		26 * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny412_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY414
+	{
+		"attiny414",
+		0x9222,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		26 * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny414_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY416
+	{
+		"attiny416",
+		0x9221,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		26 * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny416_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY417
+	{
+		"attiny417",
+		0x9220,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		26 * 2,	// First flash address which is not an interrupt vector
+		DEVFL_NONE,
+		attiny417_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY814
+	{
+		"attiny814",
+		0x9322,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		26 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny814_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY816
+	{
+		"attiny816",
+		0x9321,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		26 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny816_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY817
+	{
+		"attiny817",
+		0x9320,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		26 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny817_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY1614
+	{
+		"attiny1614",
+		0x9422,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		26 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny1614_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY1616
+	{
+		"attiny1616",
+		0x9421,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		26 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny1616_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY1617
+	{
+		"attiny1617",
+		0x9420,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		26 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny1617_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY3216
+	{
+		"attiny3216",
+		0x9521,
+		128, 256,	// flash
+		64, 4,	// EEPROM
+		32 * 4,	// interrupt vectors
+		DEVFL_NONE,
+		attiny3216_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			128,					// Page size of flash in bytes
+			64,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+			{ 0x94, 0x11, 0x8c, 0x0a, 0x98, 0x08, 0xdc, 0x05, 0xee, 0x02, 0x00, 0x80, 0x00, 0x00, 0x00,
+			0x01, 0x40, 0x00, 0x0a, 0x05, 0xff, 0x00, 0xff, 0x00, 0x00, 0x14, 0x00, 0x13, 0x00, 0x11, 0x80,
+			0x12, 0x8a, 0x12, 0x22, 0x95, 0x00, 0x00, 0x00 },
+		},
+	},
+
+	// DEV_ATTINY3217
+	{
+		"attiny3217",
+		0x9522,
+		128, 256,	// flash
+		64, 4,	// EEPROM
+		32 * 4,	// interrupt vectors
+		DEVFL_NONE,
+		attiny3217_io_registers,
+		false,
+		0x5F7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			128,					// Page size of flash in bytes
+			64,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+			{ 0x94, 0x11, 0x8c, 0x0a, 0x98, 0x08, 0xdc, 0x05, 0xee, 0x02, 0x00, 0x80, 0x00, 0x00, 0x00,
+			0x01, 0x40, 0x00, 0x0a, 0x05, 0xff, 0x00, 0xff, 0x00, 0x00, 0x14, 0x00, 0x13, 0x00, 0x11, 0x80,
+			0x12, 0x8a, 0x12, 0x22, 0x95, 0x00, 0x00, 0x00 },
+		},
+	},
+
+	// DEV_ATTINY424
+	{
+		"attiny424",
+		0x922c,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		30 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny424_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY426
+	{
+		"attiny426",
+		0x922b,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		30 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny426_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY427
+	{
+		"attiny427",
+		0x922a,
+		64, 64,	// flash
+		32, 4,	// EEPROM
+		30 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny427_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY824
+	{
+		"attiny824",
+		0x9329,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		30 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny824_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY826
+	{
+		"attiny826",
+		0x9328,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		30 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny826_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY827
+	{
+		"attiny827",
+		0x9327,
+		64, 128,	// flash
+		32, 4,	// EEPROM
+		30 * 2,	// interrupt vectors
+		DEVFL_NONE,
+		attiny827_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY1624
+	{
+		"attiny1624",
+		0x942a,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		30 * 4,	// interrupt vectors
+		DEVFL_NONE,
+		attiny1624_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY1626
+	{
+		"attiny1626",
+		0x9429,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		30 * 4,	// interrupt vectors
+		DEVFL_NONE,
+		attiny1626_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY1627
+	{
+		"attiny1627",
+		0x9428,
+		64, 256,	// flash
+		32, 8,	// EEPROM
+		30 * 4,	// interrupt vectors
+		DEVFL_NONE,
+		attiny1627_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			64,					// Page size of flash in bytes
+			32,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+
+
+	// DEV_ATTINY3224
+	{
+		"attiny3224",
+		0x9528,
+		128, 256,	// flash
+		64, 8,	// EEPROM
+		30 * 4,	// interrupt vectors
+		DEVFL_NONE,
+		attiny3224_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			128,					// Page size of flash in bytes
+			64,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY3226
+	{
+		"attiny3226",
+		0x9527,
+		128, 256,	// flash
+		64, 8,	// EEPROM
+		30 * 4,	// interrupt vectors
+		DEVFL_NONE,
+		attiny3226_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			128,					// Page size of flash in bytes
+			64,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+	// DEV_ATTINY3227
+	{
+		"attiny3227",
+		0x9526,
+		128, 256,	// flash
+		64, 8,	// EEPROM
+		30 * 4,	// interrupt vectors
+		DEVFL_NONE,
+		attiny3227_io_registers,
+		false,
+		0x1E7, 0, // fuses
+		0, // osccal
+		0, // OCD revision
+		{
+			0	// no mkI support
+		},
+		{
+			0   // no mkII JTAG support
+		},
+		{
+			0   // no Xmega support
+		},
+		{
+			fill_b2(0x8000),	// Start address of Program memory
+			128,					// Page size of flash in bytes
+			64,					// Page size of EEPROM
+			fill_b2(0x1000),	// Address of NVMCTRL module
+			fill_b2(0x0F80),	// Address of OCD module
+		},
+	},
+
+
+
+
+
+
+
+
 	// Termination record.
 	{
 	NULL,			// name
@@ -6932,5 +8147,5 @@ jtag_device_def_type deviceDefinitions[] = {
 	{ 0 },			// mkI device descriptor information
 	{ 0 },			// mkII device descriptor
 	{ 0 },			// Xmega device descr.
-	}
+	},
 };
